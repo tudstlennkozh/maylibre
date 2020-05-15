@@ -21,6 +21,7 @@ import email
 import email.header
 import getpass
 import asyncore
+import configparser
 
 from datetime import datetime
 from exchangelib import DELEGATE, IMPERSONATION, Account, Credentials, OAuth2Credentials, \
@@ -135,11 +136,40 @@ def run(server, e_mail, username, password, port):
         print("Interrupted !")
         pass
 
+
+SECTION='DEFAULT'
+S_SERVER = 'server'
+S_EMAIL = 'email'
+S_USER = 'username'
+config_values= {
+    S_SERVER: 'mail server name',
+    S_EMAIL: 'email address for account',
+    S_USER: 'like DOMAIN\\login'}
+
+def ask_for_config(config_file: str, config:configparser) -> None:
+    print('config file is missing, please fill in missing values')
+    for v, tip in config_values.items():
+        config.set(SECTION, v, input(f"{v}({tip}):"))
+
+    with open(config_file, 'w') as configfile:
+        config.write(configfile)
+
+
 if __name__ == '__main__':
+    # just try to read config file
+    config = configparser.RawConfigParser()
+    config_file = "maylibre.cfg"
+    try:
+        with open(config_file) as f:
+            config.read_file(f)
+    except IOError:
+        # not here ? so please tell me ...
+        ask_for_config(config_file, config)
+    config.read(config_file)
     # Connection details
-    server: str = 'ews.com'
-    e_mail: str = 'unkwnon@ewsmail.com'
-    username: str = 'DOMAIN\\login'
+    server: str = config.get(SECTION, S_SERVER)
+    e_mail: str = config.get(SECTION, S_EMAIL)
+    username: str = config.get(SECTION, S_USER)
     password = getpass.getpass(f"Password for {username}:")
 
     run(server, e_mail, username, password, 1025)
