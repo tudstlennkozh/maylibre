@@ -77,6 +77,8 @@ Just type Ctrl+C to end the script when done.
 
 This script has been tested on Windows 10, with Python 3.8 and LibreOffice 6.4 on Exchange 2016 server. Please let us know if any other environment is working.
 
+You can also find some clues in [Troubleshootings.md](/Troubleshootings.md)
+
 ## Licensing
 
 [![Apache 2.0](https://img.shields.io/badge/license-Apache-blue)](/LICENSE)
@@ -93,8 +95,7 @@ Nothing would have been possible without [exchangelib](https://pypi.org/project/
 
 ## Release History
 
-Please refer to the included [CHANGELOG](/CHANGELOG.md) for the full release
-history.
+Please refer to the included [CHANGELOG](/CHANGELOG.md) for the full release history.
 
 -------------------------
 ###### © 2020 tudstlennkozh
