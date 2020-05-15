@@ -37,41 +37,28 @@ This script does almost nothing, all work is done by the [exchangelib](https://p
 
 ![Python 3.8](https://img.shields.io/badge/python-3.8-blue) 
 
-To install MayLibre, prefer to do so in a virtual environment, then activate it. Download the package :
-
-https://github.com/tudstlennkozh/maylibre/archive/master.zip
-
-and unzip wherever you like.
-
-    unzip master.zip
-    cd maylibre-master
-
-You have to install needed package :
+To install MayLibre, prefer to do so in a virtual environment, then activate it. You can install (wherever you like) :
 
 ```
-pip install -r requirements.txt
+pip install https://github.com/tudstlennkozh/maylibre/zipball/master
 ```
 
-That's it !
+That's it ! All required packages are installed.
 
 ## Usage
 
-modify the variables at the end of the script to suit your EWS account  :
+Just run the maylibre module. At first invocation, it will ask for configuration :
 
-```python
-# Connection details
-server: str = 'ews.com'
-e_mail: str = 'unkwnon@ewsmail.com'
-username: str = 'DOMAIN\\login'
-```
-
-then :
-
-    python maylibre.py
+    python -m maylibre
+    config file is missing, please fill in missing values
+    server(mail server name):mail.server.com
+    email(email address for account):first.name@server.com
+    username(like DOMAIN\login):SERVER\name
+    Password for SERVER\name:
 
 enter the password associated with the account, and proceed to LibreOffice to send all your emails via your local smtp server directly connected to EWS.
 
-Just type Ctrl+C to end the script when done.
+Just type Ctrl+C to end the script when done. Configuration is saved in current dir for next invocation (except password).
 
 ## Tests
 
