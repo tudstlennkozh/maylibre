@@ -2,9 +2,10 @@ from distutils.core import setup
 
 setup(
     name='maylibre',
-    version='0.1',
+    version='0.1.0',
     packages=[''],
     scripts=['maylibre.py'],
+    install_requires=['exchangelib>=3.2.0'],
     url='https://github.com/tudstlennkozh/maylibre/',
     license='Apache 2.0',
     author='tudstlennkozh',

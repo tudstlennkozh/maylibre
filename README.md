@@ -39,9 +39,9 @@ This script does almost nothing, all work is done by the [exchangelib](https://p
 
 To install MayLibre, prefer to do so in a virtual environment, then activate it and type the command:
 
-    md maylibre
-    cd maylibre
     pip install https://github.com/tudstlennkozh/maylibre/zipball/master
+
+It will install all needed packages, from exchangelib.
 
 You then have to install needed package :
 
