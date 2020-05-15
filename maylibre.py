@@ -137,6 +137,7 @@ def run(server, e_mail, username, password, port):
         pass
 
 
+CONFIG_FILE='maylibre.cfg'
 SECTION='DEFAULT'
 S_SERVER = 'server'
 S_EMAIL = 'email'
@@ -158,7 +159,7 @@ def ask_for_config(config_file: str, config:configparser) -> None:
 if __name__ == '__main__':
     # just try to read config file
     config = configparser.RawConfigParser()
-    config_file = "maylibre.cfg"
+    config_file = CONFIG_FILE
     try:
         with open(config_file) as f:
             config.read_file(f)
