@@ -37,16 +37,18 @@ This script does almost nothing, all work is done by the [exchangelib](https://p
 
 ![Python 3.8](https://img.shields.io/badge/python-3.8-blue) 
 
-To install MayLibre, prefer to do so in a virtual environment, then activate it and type the command:
+To install MayLibre, prefer to do so in a virtual environment, then activate it. Download the package :
 
-    pip install https://github.com/tudstlennkozh/maylibre/zipball/master
+https://github.com/tudstlennkozh/maylibre/archive/master.zip
 
-It will install all needed packages, from exchangelib.
+and unzip wherever you like.
 
-You then have to install needed package :
+    unzip master.zip
+    cd maylibre-master
+
+You have to install needed package :
 
 ```
-cd 
 pip install -r requirements.txt
 ```
 
@@ -54,7 +56,7 @@ That's it !
 
 ## Usage
 
-modify the variables at the begining of the script to suit your EWS account  :
+modify the variables at the end of the script to suit your EWS account  :
 
 ```python
 # Connection details
@@ -87,7 +89,7 @@ Unless required by applicable law or agreed to in writing, software distributed 
 
 ## Credits
 
-Please refer to the included [AUTHORS](/AUTHORS.md) for the full credits. Nothing would have been possible without [exchangelib](https://pypi.org/project/exchangelib/).
+Nothing would have been possible without [exchangelib](https://pypi.org/project/exchangelib/).
 
 ## Release History
 
