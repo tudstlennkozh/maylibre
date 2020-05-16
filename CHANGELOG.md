@@ -5,20 +5,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
-## [0.0.2] - 2020-xxx
-
-### Added
-
-- 
+## [0.0.2] - 2020-05-16
 
 ### Changed
 
 - try to read config file and creates if missing
 - installation mode based on setup, runs as python -m and config file in current dir
-
-### Removed
-
-- 
 
 ## [0.0.1] - 2020-05-15
 
