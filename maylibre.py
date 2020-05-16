@@ -16,6 +16,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 """
 
+import os
 import smtpd
 import email
 import email.header
@@ -137,7 +138,7 @@ def run(server, e_mail, username, password, port):
         pass
 
 
-CONFIG_FILE='maylibre.cfg'
+CONFIG_FILENAME='maylibre.cfg'
 SECTION='DEFAULT'
 S_SERVER = 'server'
 S_EMAIL = 'email'
@@ -147,26 +148,24 @@ config_values= {
     S_EMAIL: 'email address for account',
     S_USER: 'like DOMAIN\\login'}
 
-def ask_for_config(config_file: str, config:configparser) -> None:
-    print('config file is missing, please fill in missing values')
+def ask_for_config(config_filename: str, config:configparser) -> None:
+    print('no config file, please fill in missing values')
     for v, tip in config_values.items():
         config.set(SECTION, v, input(f"{v}({tip}):"))
 
-    with open(config_file, 'w') as configfile:
+    with open(config_filename, 'w') as configfile:
         config.write(configfile)
-
+        print(f"configuration saved in {os.path.realpath(configfile.name)}")
 
 if __name__ == '__main__':
     # just try to read config file
     config = configparser.RawConfigParser()
-    config_file = CONFIG_FILE
     try:
-        with open(config_file) as f:
+        with open(CONFIG_FILENAME) as f:
             config.read_file(f)
     except IOError:
-        # not here ? so please tell me ...
-        ask_for_config(config_file, config)
-    config.read(config_file)
+        # not here ? so please give parameters ...
+        ask_for_config(CONFIG_FILENAME, config)
     # Connection details
     server: str = config.get(SECTION, S_SERVER)
     e_mail: str = config.get(SECTION, S_EMAIL)
