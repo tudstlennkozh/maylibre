@@ -66,7 +66,7 @@ connecting to mail.server.com ...
 
 and proceed to LibreOffice to send all your emails via your local smtp server directly connected to EWS.
 
-Just type Ctrl+C to end the script when done. Configuration is saved dir for next invocation (except password). Please note the path, you may need to modify it in the future.
+Just type `Ctrl+C` to end the script when done. Configuration is saved for next invocation (except password). Please note the path, you may need to modify it in the future : if you want to change configuration, just edit the generated `maylibre.cfg` file or delete it to relaunch questions at next run.
 
 ## Tests
 
