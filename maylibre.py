@@ -149,12 +149,12 @@ SECTION        ='DEFAULT'
 S_SERVER       = 'server'
 S_EMAIL        = 'email'
 S_USER         = 'username'
-S_LOCALCOPY    = ''
+S_LOCALCOPY    = 'eml_directory'
 config_values= {
-    S_SERVER: 'mail server name',
-    S_EMAIL: 'email address for account',
-    S_USER: 'like DOMAIN\\login',
-    S_LOCALCOPY: 'dir where to put .eml of all emails sent, leave empty if you don\'t want a local copy'}
+    S_SERVER:    'mail server name',
+    S_EMAIL:     'email address for account',
+    S_USER:      'like DOMAIN\\login',
+    S_LOCALCOPY: 'dir where to put .eml of emails sent, leave empty if you don\'t want a local copy'}
 
 
 def ask_for_config(config_filename: str, config:configparser) -> None:

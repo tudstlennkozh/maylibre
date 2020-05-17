@@ -54,6 +54,7 @@ Just run the maylibre module. At first invocation, it will ask for configuration
     server(mail server name):mail.server.com
     email(email address for account):first.name@server.com
     username(like DOMAIN\login):SERVER\name
+    eml_directory(dir where to put .eml of emails sent, leave empty if you don't want a local copy):C:\Temp\Emails
     configuration saved in C:\Users\...\test\maylibre.cfg
 
 Then enter the password associated with the account
