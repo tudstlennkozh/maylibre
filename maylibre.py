@@ -47,15 +47,21 @@ class CustomSMTPServer(smtpd.SMTPServer):
 
     no = 0
 
-    def __init__(self, localaddr, account):
-        super().__init__(localaddr, None) #, enable_SMTPUTF8=True)
+    def __init__(self, localaddr, account, directory_for_eml = None) :
+        super().__init__(localaddr, None)
         self.account = account
+        if directory_for_eml:
+            self.local_copy_emails = True
+            self.directory_for_eml = directory_for_eml
+        else:
+            self.local_copy_emails = False
 
     def _save_message(self, data):
-        filename = f"{datetime.now().strftime('%Y%m%d%H%M%S')}-{self.no}.eml"
-        with open(filename, 'wb') as f:
-            f.write(data)
-        print(f"{filename} saved." )
+        if self.local_copy_emails:
+            filename = f"{datetime.now().strftime('%Y%m%d%H%M%S')}-{self.no}.eml"
+            with open(os.path.join(self.directory_for_eml,filename), 'wb') as f:
+                f.write(data)
+            print(f"{filename} saved." )
         self.no += 1
 
     def process_message(self, peer, mailfrom, rcpttos, data, **kwargs):
@@ -122,14 +128,14 @@ def display_account_infos(account):
         print("%s:%s" % (attr, getattr(i,attr)))
 
 
-def run(server, e_mail, username, password, port):
+def run(server, e_mail, username, password, port, directory_for_eml):
     print(f"connecting to {server} ...")
     account = connect(server, e_mail, username, password)
 
     display_account_infos(account)
     account.root.refresh()
 
-    s = CustomSMTPServer(('localhost', port), account)
+    s = CustomSMTPServer(('localhost', port), account, directory_for_eml)
     print(f"listening on port {s.addr[1]} ...")
     try:
         asyncore.loop()
@@ -139,14 +145,17 @@ def run(server, e_mail, username, password, port):
 
 
 CONFIG_FILENAME='maylibre.cfg'
-SECTION='DEFAULT'
-S_SERVER = 'server'
-S_EMAIL = 'email'
-S_USER = 'username'
+SECTION        ='DEFAULT'
+S_SERVER       = 'server'
+S_EMAIL        = 'email'
+S_USER         = 'username'
+S_LOCALCOPY    = ''
 config_values= {
     S_SERVER: 'mail server name',
     S_EMAIL: 'email address for account',
-    S_USER: 'like DOMAIN\\login'}
+    S_USER: 'like DOMAIN\\login',
+    S_LOCALCOPY: 'dir where to put .eml of all emails sent, leave empty if you don\'t want a local copy'}
+
 
 def ask_for_config(config_filename: str, config:configparser) -> None:
     print('no config file, please fill in missing values')
@@ -170,6 +179,7 @@ if __name__ == '__main__':
     server: str = config.get(SECTION, S_SERVER)
     e_mail: str = config.get(SECTION, S_EMAIL)
     username: str = config.get(SECTION, S_USER)
+    local_copy: str = config.get(SECTION, S_LOCALCOPY)
     password = getpass.getpass(f"Password for {username}:")
 
-    run(server, e_mail, username, password, 1025)
+    run(server, e_mail, username, password, 1025, local_copy)
