@@ -35,8 +35,6 @@ This script does almost nothing, all work is done by the [exchangelib](https://p
 
 ## Installation
 
-![Python 3.8](https://img.shields.io/badge/python-3.8-blue) 
-
 To install MayLibre, prefer to do so in a virtual environment, then activate it. You can install (wherever you like) :
 
 ```
@@ -70,7 +68,17 @@ Just type `Ctrl+C` to end the script when done. Configuration is saved for next 
 
 ## Tests
 
-This script has been tested on Windows 10, with Python 3.8 and LibreOffice 6.4 on Exchange 2016 server. Please let us know if any other environment is working.
+This script has been tested on :
+
+| OS               | Python                                                       | LibreOffice                                                  | Tests  |
+| ---------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ |
+| Windows 10       | ![Python 3.8](https://img.shields.io/badge/python-3.8-blue)  | <img src="https://www.documentfoundation.org/assets/Uploads/LibreOffice-Initial-Artwork-Logo-ColorLogoBasic-500px.png" alt="LibreOffice" style="zoom:25%;" />6.4 | passed |
+| WSL/Ubuntu 18.04 | ![Python 3.6.9](https://img.shields.io/badge/python-3.6.9-blue) | <img src="https://www.documentfoundation.org/assets/Uploads/LibreOffice-Initial-Artwork-Logo-ColorLogoBasic-500px.png" alt="LibreOffice" style="zoom:25%;" />6.4 | passed |
+
+Please let us know if any other environment is working.
+
+* as a python exec inside LO ?
+* allow to enter %USERPROFILE% env. var in path ?
 
 You can also find some clues in [Troubleshootings.md](/Troubleshootings.md)
 
