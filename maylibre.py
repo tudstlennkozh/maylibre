@@ -44,10 +44,9 @@ def decode_mime_words(s):
 
 
 class CustomSMTPServer(smtpd.SMTPServer):
-
     no = 0
 
-    def __init__(self, localaddr, account, directory_for_eml = None) :
+    def __init__(self, localaddr, account, directory_for_eml=None):
         super().__init__(localaddr, None)
         self.account = account
         if directory_for_eml:
@@ -59,9 +58,9 @@ class CustomSMTPServer(smtpd.SMTPServer):
     def _save_message(self, data):
         if self.local_copy_emails:
             filename = f"{datetime.now().strftime('%Y%m%d%H%M%S')}-{self.no}.eml"
-            with open(os.path.join(self.directory_for_eml,filename), 'wb') as f:
+            with open(os.path.join(self.directory_for_eml, filename), 'wb') as f:
                 f.write(data)
-            print(f"{filename} saved." )
+            print(f"{filename} saved.")
         self.no += 1
 
     def process_message(self, peer, mailfrom, rcpttos, data, **kwargs):
@@ -112,7 +111,7 @@ def connect(server, e_mail, username, password, auth_type=NTLM, access_type=DELE
     creds = Credentials(username=username, password=password)
     config = Configuration(server=server, credentials=creds, auth_type=auth_type)
     return Account(primary_smtp_address=e_mail, autodiscover=True,
-                   config = config, credentials=creds, access_type=access_type)
+                   config=config, credentials=creds, access_type=access_type)
 
 
 def display_account_infos(account):
@@ -125,7 +124,7 @@ def display_account_infos(account):
     print(i.all())
     print("global stats for inbox:")
     for attr in ['total_count', 'unread_count']:
-        print("%s:%s" % (attr, getattr(i,attr)))
+        print("%s:%s" % (attr, getattr(i, attr)))
 
 
 def run(server, e_mail, username, password, port, directory_for_eml):
@@ -157,7 +156,7 @@ config_values= {
     S_LOCALCOPY: 'dir where to put .eml of emails sent, leave empty if you don\'t want a local copy'}
 
 
-def ask_for_config(config_filename: str, config:configparser) -> None:
+def ask_for_config(config_filename: str, config: configparser) -> None:
     print('no config file, please fill in missing values')
     for v, tip in config_values.items():
         config.set(SECTION, v, input(f"{v}({tip}):"))
@@ -166,7 +165,12 @@ def ask_for_config(config_filename: str, config:configparser) -> None:
         config.write(configfile)
         print(f"configuration saved in {os.path.realpath(configfile.name)}")
 
-if __name__ == '__main__':
+
+def main():
+    """
+    main function.
+    checks if cfg file exists, creates if needed and then run a local smtp server.
+    """
     # just try to read config file
     config = configparser.RawConfigParser()
     try:
@@ -183,3 +187,7 @@ if __name__ == '__main__':
     password = getpass.getpass(f"Password for {username}:")
 
     run(server, e_mail, username, password, 1025, local_copy)
+
+
+if __name__ == '__main__':
+    main()
