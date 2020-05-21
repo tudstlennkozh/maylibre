@@ -38,9 +38,17 @@ def is_probably_html(_s: str, content_type: str) -> bool:
 
 
 def decode_mime_words(s):
+    """
+    will handle 's' even if still mime encoded and return a correct string
+
+    >>> decode_mime_words('àç_(àçyfhzeiçà"')
+    'àç_(àçyfhzeiçà"'
+    >>> decode_mime_words('=?utf-8?b?w6DDp18oJ8Ogw6d5Zmh6ZWnDp8OgJw==?=')
+    "àç_('àçyfhzeiçà'"
+    """
     return u''.join(
-        word.decode(encoding or 'utf8')
-        for word, encoding in email.header.decode_header(s))
+        word if isinstance(word, str) else word.decode(encoding or 'utf8')
+            for word, encoding in email.header.decode_header(s))
 
 
 class CustomSMTPServer(smtpd.SMTPServer):
@@ -83,6 +91,7 @@ class CustomSMTPServer(smtpd.SMTPServer):
             content_type = msg.get_content_type()
 
             print('Message subject       :', subject)
+            print("orig subject=", msg.get('subject', ''))
             print('Message charset       :', charset)
             print('Message encoding      :', content_encoding)
             print('Message type          :', content_type)
@@ -104,7 +113,7 @@ class CustomSMTPServer(smtpd.SMTPServer):
             print("mail sent via Exchange")
 
 
-def connect(server, e_mail, username, password, auth_type=NTLM, access_type=DELEGATE):
+def connect(server: str, e_mail: str, username: str, password: str, auth_type = NTLM, access_type = DELEGATE) -> object:
     """
     Get Exchange account connection with server
     """
@@ -114,7 +123,7 @@ def connect(server, e_mail, username, password, auth_type=NTLM, access_type=DELE
                    config=config, credentials=creds, access_type=access_type)
 
 
-def display_account_infos(account):
+def display_account_infos(account) -> None:
     """
     Display some stats about this account
     (suppose account is a valid live object)
@@ -127,7 +136,7 @@ def display_account_infos(account):
         print("%s:%s" % (attr, getattr(i, attr)))
 
 
-def run(server, e_mail, username, password, port, directory_for_eml):
+def run(server: str, e_mail: str, username: str, password: str, port, directory_for_eml) -> None:
     print(f"connecting to {server} ...")
     account = connect(server, e_mail, username, password)
 
@@ -166,7 +175,7 @@ def ask_for_config(config_filename: str, config: configparser) -> None:
     print(f"configuration saved in {os.path.realpath(configfile.name)}")
 
 
-def main():
+def main() -> None:
     """
     main function.
     checks if cfg file exists, creates if needed and then run a local smtp server.
