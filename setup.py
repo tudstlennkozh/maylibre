@@ -4,7 +4,7 @@ setup(
     name='maylibre',
     version='0.0.3',
     packages=[''],
-    install_requires=['exchangelib>=3.2.0'],
+    install_requires=['exchangelib'],
     url='https://github.com/tudstlennkozh/maylibre/',
     license='Apache 2.0',
     author='tudstlennkozh',
