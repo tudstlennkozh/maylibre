@@ -52,6 +52,7 @@ def decode_mime_words(s):
 
 
 class CustomSMTPServer(smtpd.SMTPServer):
+
     no = 0
 
     def __init__(self, localaddr, account, directory_for_eml=None):
