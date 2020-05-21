@@ -163,7 +163,7 @@ def ask_for_config(config_filename: str, config: configparser) -> None:
 
     with open(config_filename, 'w') as configfile:
         config.write(configfile)
-        print(f"configuration saved in {os.path.realpath(configfile.name)}")
+    print(f"configuration saved in {os.path.realpath(configfile.name)}")
 
 
 def main():
