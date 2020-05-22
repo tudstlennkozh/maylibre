@@ -114,7 +114,7 @@ class CustomSMTPServer(smtpd.SMTPServer):
             print("mail sent via Exchange")
 
 
-def connect(server: str, e_mail: str, username: str, password: str, auth_type = NTLM, access_type = DELEGATE) -> object:
+def connect(server: str, e_mail: str, username: str, password: str, auth_type=NTLM, access_type=DELEGATE) -> Account:
     """
     Get Exchange account connection with server
     """
