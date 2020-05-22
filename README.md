@@ -72,8 +72,8 @@ This script has been tested on :
 
 | OS               | Python                                                       | LibreOffice                                                  | Tests  |
 | ---------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ |
-| Windows 10       | ![Python 3.8](https://img.shields.io/badge/python-3.8-blue)  | <img src="https://www.documentfoundation.org/assets/Uploads/LibreOffice-Initial-Artwork-Logo-ColorLogoBasic-500px.png" alt="LibreOffice" style="zoom:25%;" />6.4 | passed |
-| WSL/Ubuntu 18.04 | ![Python 3.6.9](https://img.shields.io/badge/python-3.6.9-blue) | <img src="https://www.documentfoundation.org/assets/Uploads/LibreOffice-Initial-Artwork-Logo-ColorLogoBasic-500px.png" alt="LibreOffice" style="zoom:25%;" />6.4 | passed |
+| Windows 10       | ![Python 3.8](https://img.shields.io/badge/python-3.8-blue)  | <img src="https://www.documentfoundation.org/assets/Uploads/LibreOffice-Initial-Artwork-Logo-ColorLogoBasic-500px.png" alt="LibreOffice" width="125" height="40" />6.4 | passed |
+| WSL/Ubuntu 18.04 | ![Python 3.6.9](https://img.shields.io/badge/python-3.6.9-blue) | <img src="https://www.documentfoundation.org/assets/Uploads/LibreOffice-Initial-Artwork-Logo-ColorLogoBasic-500px.png" alt="LibreOffice" width="125" height="40" />6.4 | passed |
 
 Please let us know if any other environment is working.
 
