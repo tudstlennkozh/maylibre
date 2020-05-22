@@ -5,12 +5,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
-## [0.0.3] - 2020 xxx
+## [0.0.4] - 2020 xxx
+
+
+## [0.0.3] - 2020-05-21
 
 ### Added
 
 - eml_directory in config file to set directory where to keep a copy of emails sent
 - the smtp server now accepts not to always store .eml files
+
+### Changed
+
+- fixed issue in decode_mime_words()
 
 ## [0.0.2] - 2020-05-16
 
