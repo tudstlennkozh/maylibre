@@ -5,7 +5,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
-## [0.0.4] - 2020 xxx
+## [0.0.5] - 2020-xxx
+
+### Added
+
+- version is now printed out and shared between setup and main file
+
+## [0.0.4] - 2020-05-22
+
+### Changed
+
+- missing doc
+- modified readme for image size
 
 
 ## [0.0.3] - 2020-05-21
