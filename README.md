@@ -77,9 +77,6 @@ This script has been tested on :
 
 Please let us know if any other environment is working.
 
-* as a python exec inside LO ?
-* allow to enter %USERPROFILE% env. var in path ?
-
 You can also find some clues in [Troubleshootings.md](/Troubleshootings.md)
 
 ## Licensing
