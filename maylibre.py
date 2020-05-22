@@ -31,6 +31,9 @@ from exchangelib import DELEGATE, IMPERSONATION, Account, Credentials, OAuth2Cre
 from exchangelib.autodiscover import AutodiscoverProtocol
 
 
+__version__ = '0.0.5'
+
+
 def is_probably_html(_s: str, content_type: str) -> bool:
     if content_type.lower() == "text/html":
         return True
@@ -181,6 +184,7 @@ def main() -> None:
     main function.
     checks if cfg file exists, creates if needed and then run a local smtp server.
     """
+    print(f'mayLibre {__version__}')
     # just try to read config file
     config = configparser.RawConfigParser()
     try:
