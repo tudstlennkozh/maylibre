@@ -31,7 +31,7 @@ from exchangelib import DELEGATE, IMPERSONATION, Account, Credentials, OAuth2Cre
 from exchangelib.autodiscover import AutodiscoverProtocol
 
 
-__version__ = '0.0.5'
+__version__ = '0.0.6'
 
 
 def is_probably_html(_s: str, content_type: str) -> bool:
