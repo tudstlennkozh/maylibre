@@ -1,0 +1,7 @@
+﻿MayLibre
+
+Copyright (c) 2020-2021 Tudstlenkozh
+
+Easy mass-mailing from LibreOffice to Exchange Server
+
+

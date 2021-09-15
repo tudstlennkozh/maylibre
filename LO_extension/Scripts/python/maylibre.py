@@ -156,7 +156,7 @@ def run(server: str, e_mail: str, username: str, password: str, port, directory_
         pass
 
 
-CONFIG_FILENAME='maylibre.cfg'
+CONFIG_FILENAME= '../../../maylibre.cfg'
 SECTION        ='DEFAULT'
 S_SERVER       = 'server'
 S_EMAIL        = 'email'

@@ -21,7 +21,7 @@ def get_version(rel_path):
 
 setup(
     name='maylibre',
-    version=get_version('maylibre.py'),
+    version=get_version('LO_extension/Scripts/python/maylibre.py'),
     packages=[''],
     install_requires=['exchangelib'],
     url='https://github.com/tudstlennkozh/maylibre/',
