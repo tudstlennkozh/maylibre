@@ -12,5 +12,5 @@ The list of developers who have kindly contributed to the MayLibre project is co
 You can found it here: https://github.com/tudstlennkozh/maylibre/graphs/contributors.
 
 -------------------------
-###### © 2020 tudstlennkozh
+###### © 2020-2021 tudstlennkozh
 
