@@ -23,7 +23,7 @@ setup(
     name='maylibre',
     version=get_version('LO_extension/Scripts/python/maylibre.py'),
     packages=[''],
-    install_requires=['exchangelib'],
+    install_requires=[''],
     url='https://github.com/tudstlennkozh/maylibre/',
     license='Apache 2.0',
     author='tudstlennkozh',
