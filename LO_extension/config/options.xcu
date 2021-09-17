@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<oor:component-data oor:name="OptionsDialog" 
+oor:package="org.openoffice.Office"
+xmlns:oor="http://openoffice.org/2001/registry" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<node oor:name="Nodes">
+    <node oor:name="Maylibre" oor:op="fuse">
+        <node oor:name="Leaves">
+            <node oor:name="Exchange params" oor:op="fuse">
+                <prop oor:name="Id">
+                    <value>maylibre.tudstlenkozh.addon</value>
+                </prop>
+                <prop oor:name="Label">
+                    <value xml:lang="en-US">Exchange params</value>
+                </prop>
+                <prop oor:name="OptionsPage">
+                    <value>%origin%/config/options.xdl</value>
+                </prop>
+                <prop oor:name="EventHandlerService">
+                    <value>maylibre.OptionPage</value>
+                </prop>
+            </node>
+        </node>
+    </node>
+</node>
+</oor:component-data>
+

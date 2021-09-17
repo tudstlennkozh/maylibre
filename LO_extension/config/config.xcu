@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<oor:component-data xmlns:oor="http://openoffice.org/2001/registry" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+ oor:name="OptionPage" oor:package="maylibre">
+    <prop oor:name="server" oor:type="xs:string">
+        <value>mail.server.ext</value>
+    </prop>
+    <prop oor:name="login" oor:type="xs:string">
+        <value>domain\login</value>
+    </prop>
+    <prop oor:name="email" oor:type="xs:string">
+        <value>user@server.ext</value>
+    </prop>
+    <prop oor:name="eml_directory" oor:type="xs:string">
+        <value>/some/path</value>
+    </prop>
+</oor:component-data>

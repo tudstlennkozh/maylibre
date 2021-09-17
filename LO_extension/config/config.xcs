@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<oor:component-schema  
+oor:name="OptionPage" 
+oor:package="maylibre" xml:ang="en-US"
+xmlns:oor="http://openoffice.org/2001/registry" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <templates/>
+    <component>
+            <prop oor:name="server" oor:type="xs:string">
+                <info>
+                    <desc>mail server name</desc>
+                </info>
+            </prop>
+            <prop oor:name="login" oor:type="xs:string">
+                <info>
+                    <desc>like DOMAIN\\login, used to connect to server</desc>
+                </info>
+            </prop>
+            <prop oor:name="email" oor:type="xs:string">
+                <info>
+                    <desc>email address for account</desc>
+                </info>
+            </prop>
+            <prop oor:name="eml_directory" oor:type="xs:string">
+                <info>
+                    <desc>dir where to put .eml of emails sent, leave empty if you don't want a local copy</desc>
+                </info>
+            </prop>
+    </component>
+</oor:component-schema>

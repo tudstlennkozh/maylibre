@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="maylibre_config" dlg:left="56" dlg:top="24" dlg:width="261" dlg:height="186" dlg:closeable="true" dlg:moveable="true" dlg:withtitlebar="false">
+ <dlg:styles>
+  <dlg:style dlg:style-id="0" dlg:font-name="DejaVu Sans" dlg:font-height="9"/>
+ </dlg:styles>
+ <dlg:bulletinboard>
+  <dlg:text dlg:style-id="0" dlg:id="server_label" dlg:tab-index="0" dlg:left="6" dlg:top="7" dlg:width="82" dlg:height="15" dlg:value="Server" dlg:valign="center"/>
+  <dlg:text dlg:style-id="0" dlg:id="login_label" dlg:tab-index="1" dlg:left="6" dlg:top="25" dlg:width="82" dlg:height="15" dlg:value="Login" dlg:valign="center"/>
+  <dlg:text dlg:style-id="0" dlg:id="email_label" dlg:tab-index="2" dlg:left="6" dlg:top="44" dlg:width="82" dlg:height="15" dlg:value="E-mail" dlg:valign="center"/>
+  <dlg:text dlg:style-id="0" dlg:id="eml_directory_label" dlg:tab-index="3" dlg:left="6" dlg:top="63" dlg:width="82" dlg:height="15" dlg:value="Eml directory" dlg:valign="center"/>
+  <dlg:textfield dlg:id="server" dlg:tab-index="4" dlg:left="93" dlg:top="6" dlg:width="72" dlg:height="17" dlg:maxlength="256"/>
+  <dlg:textfield dlg:id="login" dlg:tab-index="5" dlg:left="93" dlg:top="25" dlg:width="72" dlg:height="17" dlg:maxlength="256"/>
+  <dlg:textfield dlg:id="email" dlg:tab-index="6" dlg:left="93" dlg:top="44" dlg:width="72" dlg:height="17" dlg:maxlength="256"/>
+  <dlg:textfield dlg:id="eml_directory" dlg:tab-index="7" dlg:left="93" dlg:top="63" dlg:width="72" dlg:height="17" dlg:maxlength="256"/>
+ </dlg:bulletinboard>
+</dlg:window>
